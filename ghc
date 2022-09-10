@@ -1,0 +1,62 @@
+#!/bin/bash
+
+shopt -s extglob
+
+# global variables
+null='/dev/null'
+# absolute path
+srcPath="${BASH_SOURCE%/*}"
+# absolute directory
+srcDir="${srcPath##*/}"
+# relative directory
+relDir="${PWD##*/}"
+
+# call ghc config and endpoints
+source "${srcPath}/.ghcrc"
+for i in ${srcPath}/endpoints/* ; do
+  source "$i"
+done
+
+_msg() { # accepts an output message & 0/1 for pass/error
+  if [[ $2 = 0 ]] ; then
+    n='2'
+    response='SUCCESS'
+  else
+    n='1'
+    response='ERROR'
+  fi
+  printf '[\e[1;3%sm%s\e[0m]: %s\n' \
+    "$n" "$response" "$1"
+} # _msg end
+
+# curl wrapper
+ghc() { # accepts flags, a request method, data and url path
+  curl $flags --request $1 \
+    --url "https://api.github.com/${2}" \
+    --header 'Accept: application/vnd.github.v3+json' \
+    --header "Authorization: token $authToken" \
+    --data "$3"
+
+  [[ $? = 0 ]] || _msg 'bad request' 1
+} # ghc end
+
+# usage
+case $1 in
+  '') _msg 'no arguments supplied' 1 ;;
+  pull) ghc_pull $2 $3 $4 ;;
+  
+  push) ghc_push $2 $3 ;;
+  
+  user) case $2 in
+    repo?(s)) ghc_user_repos ;;
+    *) ghc_user $2 ;;
+  esac ;;
+
+  repo) case $2 in
+    create|cre) ghc_repo_create $3 ;;
+    delete|del) ghc_repo_delete $3 ;;
+    *) ghc_repo $2 ;;
+  esac ;;
+
+  *) _msg 'bad argument' 1 ;;
+esac
