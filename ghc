@@ -53,7 +53,7 @@ case $1 in
   esac ;;
 
   repo) case $2 in
-    create|cre) ghc_repo_create $3 ;;
+    create|cre) ghc_repo_create $3 $4 ;;
     delete|del) ghc_repo_delete $3 ;;
     *) ghc_repo $2 $3 ;;
   esac ;;
