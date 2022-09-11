@@ -40,7 +40,7 @@ accepts a repo, file & commit message
 gets user's repository information
 
 accepts a user & repository  
-> `ghc repo <user> <repo>
+> `ghc repo <user> <repo>`
 
 ### repo create
 creates a repository
