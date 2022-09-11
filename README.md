@@ -10,9 +10,10 @@
 <img src="https://badge-size.herokuapp.com/wick3dr0se/github-api-curl/master/ghc"></img>
 </div>
 
-- [pull](#pull) pull a repository to current directory
+- [pull](#pull) pull a repository
 - [push](#push) push a file to repository
 - [repo](#repo) stat repository information
+  - [repo contributors](#repo-contributors) list repository contributors
   - [repo create](#repo-create) create a repository
   - [repo delete](#repo-delete) delete a repository
 - [user](#user) stat user information
@@ -41,6 +42,15 @@ gets user's repository information
 
 accepts a user & repository  
 > `ghc repo <user> <repo>`
+
+### repo contributors
+list repository contributors
+
+accepts user & repo  
+> `ghc repo contributors <user> <repo>`
+
+---
+> `ghc repo contrib <repo>`
 
 ### repo create
 creates a repository
