@@ -1,6 +1,6 @@
 <div align="center">
 <h1>GitHub API cURL</h1>
-<p>A cURL wrapper that parses the GitHub API; Making Git CLI automation possible without Git installed</p>
+<p>A cURL wrapper that parses the GitHub API; Making git CLI automation possible without git installed</p>
 
 ![github](https://miro.medium.com/max/1200/1*9PnPjPI65fGwLiMfluVLrw.jpeg)
 
