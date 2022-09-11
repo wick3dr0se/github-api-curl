@@ -45,7 +45,8 @@ case $1 in
   '') _msg 'no arguments supplied' 1 ;;
   issue?(s)) case $2 in
     create|cre) ghc_issue_create $3 $4 $5 $6 ;;
-    *) ghc_issues $2 $3 ;;
+    list) ghc_issue_list $3 $4 ;;
+    *) ghc_issue $2 $3 $4 ;;
   esac ;;
   pull) ghc_pull $2 $3 $4 ;;
   push) ghc_push $2 $3 ;;
