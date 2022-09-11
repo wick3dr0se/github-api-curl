@@ -10,9 +10,13 @@
 <img src="https://badge-size.herokuapp.com/wick3dr0se/github-api-curl/master/ghc"></img>
 </div>
 
-- [Pull](#pull)
-- [Push](#push)
-- [User](#user)
+- [Pull](#pull) pull a repository to current directory
+- [Push](#push) push a file to repository
+- [Repo](#repo) stat repository information
+  - [Repo Create](#repo-create) create a repository
+  - [Repo Delete](#repo-delete) delete a repository
+- [User](#user) stat user information
+
 
 ## Pull
 clones/pulls a github repository without .git  
@@ -23,21 +27,43 @@ accepts user, repo & branch arguments
 --- 
 > `ghc pull <user>/<repo>/<branch>`
 
-_without any arguments, ghc will read your git user & current directory name_
-
 ## Push
-commits and pushes a specified file
+commits and pushes a file
 
-accepts a repo, file & commit message
+accepts a repo, file & commit message  
 > `ghc push <file> '<commit message>'`
 
 ---
 >  `ghc push <repo>/<file> '<commit message>'`
 
+## Repo
+gets user's repository information
+
+accepts a user & repository  
+> `ghc repo <user> <repo>
+
+### Repo Create
+creates a repository
+
+accepts a repository & description
+> `ghc repo create <repo> <description>`
+
+---
+> `ghc repo cre <repo>`
+
+### Repo Delete
+deletes a repository
+
+accepts a repository  
+> `ghc repo delete <repo>`
+
+---
+> `ghc repo del <repo>`
+
+_PAT requires delete_repo scope_
+
 ## User
-gets specifiable user information
+gets user information
 
-accepts a user
+accepts a user  
 > `ghc user <user>`
-
-_without arguments, checks your user information_
