@@ -11,23 +11,23 @@
 </div>
 
 - [issue](#issue) list issues
-  - [issue create](#issue-create) create an issue
-  - [issue list](#issue-list) list repository issues
+  - [create](#create) create an issue
+  - [list](#issue-list) list repository issues
 - [pull](#pull) pull a repository
 - [push](#push) push a file to repository
 - [repo](#repo) stat repository information
-  - [repo contributors](#repo-contributors) list repository contributors
-  - [repo create](#repo-create) create a repository
-  - [repo delete](#repo-delete) delete a repository
+  - [contributors](#contributors) list repository contributors
+  - [create](#create) create a repository
+  - [delete](#delete) delete a repository
 - [user](#user) stat user information
 
-## issue
+# issue
 view a repository issue
 
 accepts user, repo & issue number  
 > `ghc issue <user> <repo> <issue>`
 
-### issue create
+### create
 create a repository issue
 
 accepts repo, title & body  
@@ -36,13 +36,13 @@ accepts repo, title & body
 ---
 > `ghc issue cre <title> '<body>'`
 
-### issue list
+### list
 list repository issues
 
 accepts user, repo & issue number  
 > `ghc issue list <user> <repo> <issue>`
 
-## pull
+# pull
 clones/pulls a github repository without .git  
 
 accepts user, repo & branch arguments  
@@ -51,7 +51,7 @@ accepts user, repo & branch arguments
 --- 
 > `ghc pull <user>/<repo>/<branch>`
 
-## push
+# push
 commits and pushes a file
 
 accepts a repo, file & commit message  
@@ -60,13 +60,13 @@ accepts a repo, file & commit message
 ---
 >  `ghc push <repo>/<file> '<commit message>'`
 
-## repo
+# repo
 gets user's repository information
 
 accepts a user & repository  
 > `ghc repo <user> <repo>`
 
-### repo contributors
+### contributors
 list repository contributors
 
 accepts user & repo  
@@ -75,7 +75,7 @@ accepts user & repo
 ---
 > `ghc repo contrib <repo>`
 
-### repo create
+### create
 creates a repository
 
 accepts a repository & description
@@ -84,7 +84,7 @@ accepts a repository & description
 ---
 > `ghc repo cre <repo>`
 
-### repo delete
+### delete
 deletes a repository
 
 accepts a repository  
@@ -95,7 +95,7 @@ accepts a repository
 
 _PAT requires delete_repo scope_
 
-## user
+# user
 gets user information
 
 accepts a user  
