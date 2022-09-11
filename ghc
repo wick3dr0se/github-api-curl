@@ -55,7 +55,7 @@ case $1 in
   repo) case $2 in
     create|cre) ghc_repo_create $3 ;;
     delete|del) ghc_repo_delete $3 ;;
-    *) ghc_repo $2 ;;
+    *) ghc_repo $2 $3 ;;
   esac ;;
 
   *) _msg 'bad argument' 1 ;;

@@ -3,29 +3,27 @@
 
 # clones/pulls a github repository w/o git configs
 ghc_pull() { # accept user, repo & branch
-  user="${1:-$owner}"
-  repo="${2:-$relDir}"
-  
   if [[ $3 ]] ; then
     branch="$3"
   else 
     branch="${1##*/}"
   fi
 
-  if [[ ! $2 ]] ; then
-    user="$owner"
-    repo="$1"
-  fi
-
-  if [[ $1 =~ / ]] ; then
-    user="${1%%/*}"
-    repo="${1#*/}"
-    repo="${repo/\/$branch}"
+  if [[ $2 ]] ; then
+    user="${1:-$owner}"
+    repo="${2:-$relDir}"
+  else
+    if [[ $1 =~ / ]] ; then
+      user="${1%%/*}"
+      repo="${1#*/}"
+      repo="${repo/\/$branch}"
+    else
+      user="$owner"
+      repo="${1:-$relDir}"
+    fi
   fi
 
   [[ $branch =~ $repo|$user ]] && branch=''
-
-  echo $user $repo $branch
 
   flags='-L'
   ghc GET "repos/${user}/${repo}/tarball/${branch}" | tar xz
