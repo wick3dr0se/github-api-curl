@@ -10,6 +10,8 @@
 <img src="https://badge-size.herokuapp.com/wick3dr0se/github-api-curl/master/ghc"></img>
 </div>
 
+- [issues](#issues) list issues
+  - [issue create](#issue-create) create an issue
 - [pull](#pull) pull a repository
 - [push](#push) push a file to repository
 - [repo](#repo) stat repository information
@@ -18,6 +20,20 @@
   - [repo delete](#repo-delete) delete a repository
 - [user](#user) stat user information
 
+## issues
+list a repositories issues
+
+accepts user & repo  
+> `ghc issues <user> <repo>`
+
+### issue create
+create a repository issue
+
+accepts user, repo, title & body  
+> `ghc issue create <user> <repo> <title> '<body>'`
+
+---
+> `ghc issue cre <title> '<body>'`
 
 ## pull
 clones/pulls a github repository without .git  

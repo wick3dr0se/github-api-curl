@@ -43,15 +43,16 @@ ghc() { # accepts flags, a request method, data and url path
 # usage
 case $1 in
   '') _msg 'no arguments supplied' 1 ;;
+  issue?(s)) case $2 in
+    create|cre) ghc_issue_create $3 $4 $5 $6 ;;
+    *) ghc_issues $2 $3 ;;
+  esac ;;
   pull) ghc_pull $2 $3 $4 ;;
-  
   push) ghc_push $2 $3 ;;
-  
   user) case $2 in
     repo?(s)) ghc_user_repos ;;
     *) ghc_user $2 ;;
   esac ;;
-
   repo) case $2 in
     contributor?(s)|contrib?(s)) ghc_repo_contributors $3 $4 ;;
     create|cre) ghc_repo_create $3 $4 ;;
