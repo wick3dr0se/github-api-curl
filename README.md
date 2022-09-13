@@ -1,6 +1,6 @@
 <div align="center">
 <h1>ghc - GitHub API cURL</h1>
-<p>A cURL wrapper that parses the GitHub API; Making git CLI automation possible without git installed</p>
+<p>A cURL wrapper that parses GitHub REST API v3. Making things like git CLI automation possible without git installed</p>
 
 ![github](https://miro.medium.com/max/1200/1*9PnPjPI65fGwLiMfluVLrw.jpeg)
 
@@ -8,6 +8,8 @@
 <img src="https://img.shields.io/badge/Made%20with-Bash-1f425f.svg"></img>
 <img src=https://img.shields.io/badge/Maintained%3F-yes-green.svg></img>
 <img src="https://badge-size.herokuapp.com/wick3dr0se/github-api-curl/master/ghc"></img>
+
+<h2><a href="https://discord.gg/TstuWvDzXr">discord</a></h2>
 </div>
 
 - [issue](#issue) list issues
