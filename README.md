@@ -14,7 +14,7 @@
 
 - [issue](#issue) list issues
   - [create](#create) create an issue
-  - [list](#issue-list) list repository issues
+  - [list](#list) list repository issues
 - [pull](#pull) pull a repository
 - [push](#push) push a file to repository
 - [repo](#repo) stat repository information
@@ -23,7 +23,9 @@
   - [delete](#delete) delete a repository
 - [user](#user) stat user information
 
-# issue
+# Arguments
+
+## issue
 view a repository issue
 
 accepts user, repo & issue number  
@@ -33,9 +35,8 @@ accepts user, repo & issue number
 create a repository issue
 
 accepts repo, title & body  
-> `ghc issue create <repo> <title> '<body>'`
+> `ghc issue create <repo> <title> '<body>'`  
 
----
 > `ghc issue cre <title> '<body>'`
 
 ### list
@@ -44,25 +45,23 @@ list repository issues
 accepts user, repo & issue number  
 > `ghc issue list <user> <repo> <issue>`
 
-# pull
+## pull
 clones/pulls a github repository without .git  
 
 accepts user, repo & branch arguments  
-> `ghc pull <user> <repo> <branch>`
+> `ghc pull <user> <repo> <branch>`  
 
---- 
 > `ghc pull <user>/<repo>/<branch>`
 
-# push
+## push
 commits and pushes a file
 
 accepts a repo, file & commit message  
-> `ghc push <file> '<commit message>'`
+> `ghc push <file> '<commit message>'`  
 
----
 >  `ghc push <repo>/<file> '<commit message>'`
 
-# repo
+## repo
 gets user's repository information
 
 accepts a user & repository  
@@ -72,32 +71,29 @@ accepts a user & repository
 list repository contributors
 
 accepts user & repo  
-> `ghc repo contributors <user> <repo>`
+> `ghc repo contributors <user> <repo>`  
 
----
 > `ghc repo contrib <repo>`
 
 ### create
 creates a repository
 
 accepts a repository & description
-> `ghc repo create <repo> <description>`
+> `ghc repo create <repo> <description>`  
 
----
 > `ghc repo cre <repo>`
 
 ### delete
 deletes a repository
 
 accepts a repository  
-> `ghc repo delete <repo>`
+> `ghc repo delete <repo>`  
 
----
 > `ghc repo del <repo>`
 
 _PAT requires delete_repo scope_
 
-# user
+## user
 gets user information
 
 accepts a user  
