@@ -12,6 +12,16 @@
 <h2><a href="https://discord.gg/TstuWvDzXr">discord</a></h2>
 </div>
 
+# Install
+setup ghc on system
+
+```sh
+curl https://raw.githubusercontent.com/wick3dr0se/github-api-curl/master/install.sh -O && bash install.sh
+```
+
+# Arguments
+possible arguments to ghc
+  
 - [issue](#issue) list issues
   - [create](#create) create an issue
   - [list](#list) list repository issues
@@ -23,73 +33,71 @@
   - [delete](#delete) delete a repository
 - [user](#user) stat user information
 
-# Arguments
-
 ## issue
 view a repository issue
 
 accepts user, repo & issue number  
-> `ghc issue <user> <repo> <issue>`
+`ghc issue <user> <repo> <issue>`
 
 ### create
 create a repository issue
 
 accepts repo, title & body  
-> `ghc issue create <repo> <title> '<body>'`  
+`ghc issue create <repo> <title> '<body>'`  
 
-> `ghc issue cre <title> '<body>'`
+`ghc issue cre <title> '<body>'`
 
 ### list
 list repository issues
 
 accepts user, repo & issue number  
-> `ghc issue list <user> <repo> <issue>`
+`ghc issue list <user> <repo> <issue>`
 
 ## pull
 clones/pulls a github repository without .git  
 
 accepts user, repo & branch arguments  
-> `ghc pull <user> <repo> <branch>`  
+`ghc pull <user> <repo> <branch>`  
 
-> `ghc pull <user>/<repo>/<branch>`
+`ghc pull <user>/<repo>/<branch>`
 
 ## push
 commits and pushes a file
 
 accepts a repo, file & commit message  
-> `ghc push <file> '<commit message>'`  
+`ghc push <file> '<commit message>'`  
 
->  `ghc push <repo>/<file> '<commit message>'`
+`ghc push <repo>/<file> '<commit message>'`
 
 ## repo
 gets user's repository information
 
-accepts a user & repository  
-> `ghc repo <user> <repo>`
+accepts user & repo  
+`ghc repo <user> <repo>`
 
 ### contributors
 list repository contributors
 
 accepts user & repo  
-> `ghc repo contributors <user> <repo>`  
+`ghc repo contributors <user> <repo>`  
 
-> `ghc repo contrib <repo>`
+`ghc repo contrib <repo>`
 
 ### create
 creates a repository
 
-accepts a repository & description
-> `ghc repo create <repo> <description>`  
+accepts a repo & description  
+`ghc repo create <repo> <description>`  
 
-> `ghc repo cre <repo>`
+`ghc repo cre <repo>`
 
 ### delete
 deletes a repository
 
-accepts a repository  
-> `ghc repo delete <repo>`  
+accepts a repo   
+`ghc repo delete <repo>`  
 
-> `ghc repo del <repo>`
+`ghc repo del <repo>`
 
 _PAT requires delete_repo scope_
 
@@ -97,4 +105,4 @@ _PAT requires delete_repo scope_
 gets user information
 
 accepts a user  
-> `ghc user <user>`
+`ghc user <user>`
