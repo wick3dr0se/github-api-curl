@@ -11,11 +11,25 @@ srcDir="${srcPath##*/}"
 # relative directory
 relDir="${PWD##*/}"
 
+[[ -d /data/data/com.termux/files/usr/bin ]] &&
+  binPath='/data/data/com.termux/files/usr/bin' ||
+  binPath='/usr/bin'
+
+[[ -d /data/data/com.termux/files/usr/share ]] &&
+  sharePath='/data/data/com.termux/files/usr/share' ||
+  sharePath='/usr/share'
+
 # call ghc config and endpoints
-source "${srcPath}/.ghcrc"
-for i in ${srcPath}/endpoints/* ; do
-  source "$i"
-done
+source ~/.ghcrc
+if [[ -f ${binPath}/ghc ]] ; then
+  for i in ${sharePath}/github-api-curl/endpoints/* ; do
+    source $i
+  done
+else
+  for i in ${srcPath}/endpoints/* ; do
+    source $i
+  done
+fi
 
 _msg() { # accepts an output message & 0/1 for pass/error
   if [[ $2 = 0 ]] ; then
