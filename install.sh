@@ -3,8 +3,15 @@
 
 repo='github-api-curl'
 
-# source ghc for paths
-source ghc
+# check if termux paths exist
+# set usr/bin path
+[[ -d /data/data/com.termux/files/usr/bin ]] &&
+  binPath='/data/data/com.termux/files/usr/bin' ||
+  binPath='/usr/bin'
+# set usr/share path
+[[ -d /data/data/com.termux/files/usr/share ]] &&
+  sharePath='/data/data/com.termux/files/usr/share' ||
+  sharePath='/usr/share'
 
 # create temporary directory
 mkdir $repo && cd $repo
